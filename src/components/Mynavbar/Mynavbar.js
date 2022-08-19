@@ -1,19 +1,25 @@
 import React from 'react'
-/*BootStrap Styles */
+/*BootStrap Components */
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+/*Bootstrap Styles */
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function Mynavbar(){
+
+
+
+
+export default function Mynavbar(){
     return(
         <Navbar bg="light" expand="lg" >
         <Container fluid>
         <ion-icon name="game-controller-outline"></ion-icon>
-         <h3 className='subtitle'>Ecommerce VL</h3>
+         <h3 className='subtitle'>Ecommerce</h3>
+         <ion-icon name="cart-outline"></ion-icon>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
@@ -46,4 +52,3 @@ function Mynavbar(){
     )
 }
 
-export default Mynavbar

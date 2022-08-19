@@ -1,0 +1,24 @@
+
+.tituloCards1{
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: lighter;
+    letter-spacing: 0.1rem;
+    color: rgb(255, 255, 255)
+    
+}
+
+.cards1Style {
+    width: 18rem;
+    margin: 2rem;
+    border: 0.2rem double rgb(255, 255, 255);
+    border-radius: 25px;
+    background-color:rgba(0, 0, 0, 0.3);
+}
+
+.textCard{
+    color: white;
+    margin-top: 1rem;
+    font-weight: 100;
+    font-size: small;
+}

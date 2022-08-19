@@ -1,0 +1,27 @@
+
+h2{
+    text-align: center;
+    margin-top: 1rem;
+    justify-content: center;
+}
+
+h3{ font-size: 2.2em;
+    text-align: center;
+    -webkit-text-stroke: 1.5px rgb(10, 10, 10);
+    font-weight: 600;
+    color: white;
+}
+
+
+
+.divContainer{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    border: 2pt solid rgb(50, 49, 49);
+    border-radius: 1rem;
+    margin: 0.5rem;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(225,4,255,1) 35%, rgba(0,212,255,1) 100%);
+}
