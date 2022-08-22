@@ -13,7 +13,7 @@
     margin: 2rem;
     border: 0.2rem double rgb(255, 255, 255);
     border-radius: 25px;
-    background-color:rgba(0, 0, 0, 0.3);
+    background-color:rgb(2, 2, 2)
 }
 
 .textCard{

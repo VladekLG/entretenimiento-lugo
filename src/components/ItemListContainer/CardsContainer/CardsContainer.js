@@ -11,23 +11,28 @@ import jujutsu from "../cards1/images/Jujutsu.jpg";
 
 
 
+// Pasar las props de stock y contador en las cards
 
 export const CardsContainer = () => {
   return (
     <div >
       <h3>SECCION 1 DE CARDS</h3>
-      <div className="divContainer">
+      <div className="divContainer">  
       <Cards1
         titulo="Berserk"
         imagen={berserk}
         texto="Some quick example text to build on the card title and make"
         boton="Añadir al carro"
+        stock={10}
+        initial={0}
       ></Cards1>
       <Cards1
         titulo="VentoAureo"
         imagen={ventoaureo}
         texto="Some quick example text to build on the card title and make"
         boton="Añadir al carro"
+        stock={0}
+        initial={0}
       ></Cards1>
       <Cards1
         titulo="DeathNote"

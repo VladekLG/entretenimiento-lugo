@@ -6,20 +6,26 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { Cartwidget } from './CartWidget';
 /*Bootstrap Styles */
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "./Mynavbar.css"
 
 
 
 
-
-export default function Mynavbar(){
+export const Mynavbar=()=>{
     return(
+      <div> 
+        <header>
+        <h1>
+          ArmorGames&Comics/Mangas<span>ReactJS</span>
+        </h1>
         <Navbar bg="light" expand="lg" >
         <Container fluid>
         <ion-icon name="game-controller-outline"></ion-icon>
          <h3 className='subtitle'>Ecommerce</h3>
-         <ion-icon name="cart-outline"></ion-icon>
+          <Cartwidget></Cartwidget>  
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
@@ -49,6 +55,8 @@ export default function Mynavbar(){
           </Navbar.Collapse>
         </Container>
       </Navbar> 
+      </header>
+      </div>
     )
 }
 
