@@ -9,10 +9,38 @@ body{
     font-size: 0.9rem;
 }
 
+.buttonGroup{
+    display: flex;
+    justify-content: center;
+}
+
+.buttonGroup #button1{
+    border-bottom-left-radius: 0.8rem;
+    border-top-left-radius: 0.8rem;
+    background-color: rgb(5, 255, 80);
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.buttonGroup #button2{
+    border-bottom-right-radius: 0.8rem;
+    border-top-right-radius: 0.8rem;
+    background-color:rgb(5, 255, 80);
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+#button3{
+    
+    border-radius: 2rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+}
+
+
 
 div p {
     color: rgb(252, 231, 231);
-    margin: 0;
 }
 
 button{
@@ -20,8 +48,9 @@ button{
     padding-right: 0.7rem;
     padding-top: 0.3rem;
     padding-bottom: 0.3rem;
-    border-radius: 2rem;
-    margin: 0.1rem;
+    margin-bottom: 0.3rem;
     color: black;
+    font-weight: bolder;
+    
 }
 

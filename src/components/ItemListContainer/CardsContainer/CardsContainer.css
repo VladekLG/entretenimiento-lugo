@@ -23,5 +23,10 @@ h3{ font-size: 2.2em;
     border-radius: 1rem;
     margin: 0.5rem;
     background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(225,4,255,1) 35%, rgba(0,212,255,1) 100%);
+    background: linear-gradient(90deg, rgb(5, 5, 5) 0%, rgb(43, 1, 36) 25%, rgb(5, 5, 5) 50%, rgb(43, 1, 36) 75%, rgb(0, 0, 0) 100%);
 }
+
+
+/* ItemList */
+
+

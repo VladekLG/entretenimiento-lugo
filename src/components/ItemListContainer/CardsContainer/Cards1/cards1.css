@@ -11,14 +11,40 @@
 .cards1Style {
     width: 18rem;
     margin: 2rem;
-    border: 0.2rem double rgb(255, 255, 255);
-    border-radius: 25px;
-    background-color:rgb(2, 2, 2)
+    border: 0.4rem double rgb(255, 255, 255);
+    border-top-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    background-color: rgb(2, 2, 2);
+    box-shadow: 15px 14px 0px 0px rgba(0, 0, 0, 0.37);
+    -webkit-box-shadow: 15px 14px 0px 0px rgba(0, 0, 0, 0.37);
+    -moz-box-shadow: 15px 14px 0px 0px rgba(0, 0, 0, 0.37);
 }
 
-.textCard{
+.textCard {
     color: white;
     margin-top: 1rem;
     font-weight: 100;
     font-size: small;
+}
+
+
+
+/* ItemStyles */
+
+.cards2Style {
+    width: 18rem;
+    margin: 2rem;
+    border: 0.8rem inset rgb(0, 0, 0);
+    border-top-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    background: linear-gradient(-130deg, rgb(5, 5, 5) 30%, rgba(210, 210, 210, 0.414) 100%, rgb(0, 0, 0)60%);
+    font-size: 1.2rem;
+    font-weight: 400;
+    box-shadow: 15px 14px 0px 0px rgba(0, 0, 0, 0.37);
+    -webkit-box-shadow: 15px 14px 0px 0px rgba(0, 0, 0, 0.37);
+    -moz-box-shadow: 15px 14px 0px 0px rgba(0, 0, 0, 0.37);
+}
+
+.bordeImagen{
+    border:  0.5rem double rgba(255, 255, 255, 0.478);
 }

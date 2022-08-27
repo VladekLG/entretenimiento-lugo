@@ -1,13 +1,13 @@
 import React from "react";
 /*My Components */
 import { ItemListContainer } from "./components/ItemListContainer/ItemListContainer";
-import {Mynavbar} from "./components/Mynavbar"
+import { Mynavbar } from "./components/Mynavbar";
 
 function App() {
   return (
     <div>
-        <Mynavbar msg="Hola soy un componente"></Mynavbar>
-        <ItemListContainer greeting='Catalogo Provisional'/>
+      <Mynavbar msg="Hola soy un componente"></Mynavbar>
+      <ItemListContainer greeting="Catalogo Provisional"/>
     </div>
   );
 }

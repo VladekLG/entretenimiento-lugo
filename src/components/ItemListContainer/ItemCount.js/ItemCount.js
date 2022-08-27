@@ -22,14 +22,17 @@ export const ItemCount = ({stock,initial,onAdd}) => {
   };
 
   return (
-    <div className="itemCountStyle">
-      <p>Item Count</p>
-      <p>Contador: {contador}</p>    
-      <button onClick={decrementar} disabled ={stock===0}>-</button> 
-      <button onClick={()=>(onAdd(contador,stock))} style={{background: contador===stock && stock>0 ? 'red' : 'rgb(131, 70, 229)'}} disabled={stock===0 || contador === 0} >Añadir al carrito</button>
-      <button onClick={incrementar} disabled ={stock===0}>+</button>
+    <div className="itemCountStyle"> 
+
+      <div className="buttonGroup">
+        <button onClick={decrementar} disabled ={stock===0} id='button1'>-</button> 
+        <button>{contador}</button>
+        <button onClick={incrementar} disabled ={stock===0} id='button2'>+</button>
+      </div>
+
+      <button id='button3' onClick={()=>(onAdd(contador,stock))} style={{background: contador===stock && stock>0 ? 'red' : 'white'}} disabled={stock===0 || contador === 0} >Añadir al carrito</button>
       {contador === stock && stock>0 ?<p>ALCANZASTE EL MAXIMO STOCK!</p>
-                            :<p>Stock:{stock}</p>
+                            :<p> Unidades disponibles : {stock}</p>
       }
     </div>
   );
