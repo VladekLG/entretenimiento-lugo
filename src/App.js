@@ -1,6 +1,7 @@
 import React from "react";
 /*My Components */
 import { ItemListContainer } from "./components/ItemListContainer/ItemListContainer";
+import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer";
 import { Mynavbar } from "./components/Mynavbar";
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     <div>
       <Mynavbar msg="Hola soy un componente"></Mynavbar>
       <ItemListContainer greeting="Catalogo Provisional"/>
+      <ItemDetailContainer/>
     </div>
   );
 }

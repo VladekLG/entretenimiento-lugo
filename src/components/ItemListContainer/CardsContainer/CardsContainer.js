@@ -3,10 +3,10 @@ import { Cards1 } from "./Cards1/Cards1";
 /*Estilos css propios */
 import "./CardsContainer.css"
 /*Imagenes Cards 1 */
-import berserk from "../cards1/images/berserk.jpg";
-import ventoaureo from "../cards1/images/ventoaureo.jpg";
-import deathnote from "../cards1/images/deathnote.jpg";
-import jujutsu from "../cards1/images/Jujutsu.jpg";
+import berserk from '../../../assets/img/cards1/berserk.jpg';
+import ventoaureo from '../../../assets/img/cards1/ventoaureo.jpg'
+import deathnote from '../../../assets/img/cards1/deathnote.jpg'
+import jujutsu from '../../../assets/img/cards1/Jujutsu.jpg'
 
 
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import "./ItemCounts.css"
+import "./ItemCount.css"
 
 export const ItemCount = ({stock,initial,onAdd}) => {
   /*Variable,Funcion que cambiara el valor de la variable, usestate recibe un parametro (recibe el valor inicial de la variable) */
@@ -29,11 +29,12 @@ export const ItemCount = ({stock,initial,onAdd}) => {
         <button>{contador}</button>
         <button onClick={incrementar} disabled ={stock===0} id='button2'>+</button>
       </div>
-
-      <button id='button3' onClick={()=>(onAdd(contador,stock))} style={{background: contador===stock && stock>0 ? 'red' : 'white'}} disabled={stock===0 || contador === 0} >Añadir al carrito</button>
       {contador === stock && stock>0 ?<p>ALCANZASTE EL MAXIMO STOCK!</p>
                             :<p> Unidades disponibles : {stock}</p>
       }
+      <button id='button3' onClick={()=>(onAdd(contador,stock))} style={{background: contador===stock && stock>0 ? 'red' : 'white'}} disabled=
+      {stock===0 || contador === 0} >Añadir al carrito</button>
+      
     </div>
   );
 };

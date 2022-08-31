@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import {CardsContainer} from "./CardsContainer/CardsContainer";
 // import { ItemCount } from "./ItemCount.js/ItemCount";
 import { ItemList } from "./ItemList";
-import { arrayItems } from "../../data/arrayItems";
+import { obtenerItems } from "../../data/arrayItems";
 
 // 1)Importar ArrayItems 
 // 2) Dentro de ItemList creo Los list (cardsList), dentro crear una coleccion de objetos(cards)
@@ -14,20 +14,8 @@ import { arrayItems } from "../../data/arrayItems";
 export const ItemListContainer = ({greeting}) => {
   const [items,setItems]  = useState([])
 
-  // // const agregar =(contador,stock)=>{
-  // //   alert(`Añadiste ${contador} con stock de ${stock}`)
-  // // }
-
   // Creacion de Promesa para simular API
-  const obtenerItems = () => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(arrayItems);
-      }, 2000);
-    });
-  };
-
-// UseEffect Para el renderizado (Aqui va la funcion asincrona)
+ // UseEffect Para el renderizado (Aqui va la funcion asincrona)
 
 useEffect(()=>{
 
@@ -47,10 +35,6 @@ useEffect(()=>{
     <div>
       <h2 style={{marginTop:'1rem', color:'violet'}}>{greeting}</h2>
     <CardsContainer></CardsContainer>
-    {/* ItemCounts a modo de prueba!! */}
-    {/* <ItemCount stock={10} initial={0} onAdd={agregar}></ItemCount>
-    <ItemCount stock={0} initial={0} onAdd={agregar}></ItemCount> */}
-    {/* Desafio 6 */}
     <ItemList items={items}></ItemList>
    </div>
   );

@@ -18,6 +18,7 @@
     box-shadow: 15px 14px 0px 0px rgba(0, 0, 0, 0.37);
     -webkit-box-shadow: 15px 14px 0px 0px rgba(0, 0, 0, 0.37);
     -moz-box-shadow: 15px 14px 0px 0px rgba(0, 0, 0, 0.37);
+    
 }
 
 .textCard {
@@ -43,6 +44,7 @@
     box-shadow: 15px 14px 0px 0px rgba(0, 0, 0, 0.37);
     -webkit-box-shadow: 15px 14px 0px 0px rgba(0, 0, 0, 0.37);
     -moz-box-shadow: 15px 14px 0px 0px rgba(0, 0, 0, 0.37);
+    -webkit-text-stroke: 0.5px rgb(10, 10, 10);
 }
 
 .bordeImagen{

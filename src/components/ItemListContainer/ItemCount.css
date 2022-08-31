@@ -10,8 +10,10 @@ body{
 }
 
 .buttonGroup{
-    display: flex;
-    justify-content: center;
+   
+   display: flex;
+   justify-content: center;
+   
 }
 
 .buttonGroup #button1{
@@ -31,7 +33,7 @@ body{
 }
 
 #button3{
-    
+    width: 100%;
     border-radius: 2rem;
     padding-left: 2.5rem;
     padding-right: 2.5rem;
@@ -40,7 +42,10 @@ body{
 
 
 div p {
-    color: rgb(252, 231, 231);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bolder;
 }
 
 button{

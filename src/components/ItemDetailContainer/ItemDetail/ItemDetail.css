@@ -1,0 +1,59 @@
+.itemDetail{
+background-color: rgb(255, 255, 255);
+text-align: center;
+color: black;
+
+}
+
+.figureText{
+    justify-content: center;
+color:rgb(255, 255, 255);
+font-size: 1.7rem;
+-webkit-text-stroke: 1.2px rgb(10, 10, 10);
+}
+
+
+h1{
+font-size: 2.5rem;
+background-color: rgb(5, 5, 5);
+-webkit-text-stroke: 1px rgba(255, 0, 204, 0.48);
+color: rgb(0, 0, 0);
+}
+
+.precio{
+    color: white;
+    font-size: 3rem;
+    -webkit-text-stroke: 1.8px rgb(10, 10, 10);
+    font-weight: bolder;
+}
+
+
+.row>* {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-left: 0;
+    /* padding-left: calc(var(--bs-gutter-x) * .5); */
+    margin-top: var(--bs-gutter-y);
+}
+
+.iconos{
+    margin-left: 2rem;
+    margin-top: 2rem;
+    display: flex;
+    justify-content:left;
+    font-size: 2rem;
+    
+}
+
+.logo{
+
+    margin-right: 2rem;
+}
+
+.Row{
+    color: white;
+    -webkit-text-stroke: 1px rgba(255, 0, 204, 0.48);
+    background-color: rgb(39, 38, 38);
+}
+
