@@ -11,7 +11,7 @@ export const ItemList = ({items}) => {
     <div>
       <div className="divContainer">
         {items.map((item) => {
-          return <Item item={item} key={item.id} ></Item>;
+          return <Item item={item} key={item.id}/>;
         })}
       </div>
     </div>

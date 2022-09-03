@@ -7,7 +7,7 @@ import { Mynavbar } from "./components/Mynavbar";
 function App() {
   return (
     <div>
-      <Mynavbar msg="Hola soy un componente"></Mynavbar>
+      <Mynavbar msg="Hola soy un componente"/>
       <ItemListContainer greeting="Catalogo Provisional"/>
       <ItemDetailContainer/>
     </div>

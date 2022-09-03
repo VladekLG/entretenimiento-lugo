@@ -13,8 +13,8 @@ import { Icon } from '@iconify/react';
 const agregar =(contador,stock)=>{
   alert(`Añadiste ${contador} con stock de ${stock}`)
 }
-                              // usar estas props en mi lista de arrays creada
-export const ItemDetail = ({item,stock,initial,precio}) => {
+                              // usar estas props en mi lista de arrays creada --> Stock, initial, precio guardarla en elarray y destructurarlos abajo
+export const ItemDetail = ({item,  stock,initial,precio  }) => {
   const {developer,thumbnail,title,genre,release_date,short_description} = item
 
   return (
@@ -46,10 +46,12 @@ export const ItemDetail = ({item,stock,initial,precio}) => {
             <hr></hr>
             <Row>
               <h2 className="precio">${precio}</h2>
+
+               {/* Aqui deberia heredar stock initial desde el array creado de objetos. */}
               <ItemCount
-                stock={stock}
-                initial={initial}
-                onAdd={agregar}
+                stock={stock}  /*le pasara al componente el valor que defini en stock seria 10 que esta definido en ItemDetailContainer */
+                initial={initial} /*le pasara al componente el valor que defini en initial seria 0 que esta definido en ItemDetailContainer */
+                onAdd={agregar} /*Al definir una funcion como propiedad, esta debera ser declarada aqui arriba*/
               ></ItemCount>
             </Row>
 

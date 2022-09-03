@@ -19,23 +19,34 @@ export const ItemListContainer = ({greeting}) => {
 
 useEffect(()=>{
 
-  const funcionAsync = async ()=>{
-    try {   /*VARIABLE QUE VOY A USAR */
-      const listadoItems = await obtenerItems(); /*Guardo la promesa en una variable */
-      setItems(listadoItems) /*Promesa resuelta seteada */
-      console.log('listadoItems' ,listadoItems)
+  const functionAsync = async () => {
+    try {
+      const listaItems = await obtenerItems();
+      setItems(listaItems);
     } catch (error) {
-      console.log('Hubo un error')
+      console.log("hubo error");
     }
-  }
-  funcionAsync() /*Ejecuto la funcion async */
+  };
+
+  functionAsync();
+
+    // const funcionAsync = async ()=>{
+    //   try {   /*VARIABLE QUE VOY A USAR */
+    //     const listadoItems = await obtenerItems(); /*Guardo la promesa en una variable */
+    //     setItems(listadoItems) /*Promesa resuelta seteada */
+    //     console.log('listadoItems' ,listadoItems)
+    //   } catch (error) {
+    //     console.log('Hubo un error')
+    //   }
+    // }
+    // funcionAsync() /*Ejecuto la funcion async */
 },[])
-/* */
   return (
     <div>
       <h2 style={{marginTop:'1rem', color:'violet'}}>{greeting}</h2>
-    <CardsContainer></CardsContainer>
-    <ItemList items={items}></ItemList>
+    <CardsContainer/>  
+    {/* Borrar cards container y poner otra cosa */}
+    <ItemList items={items}/>
    </div>
   );
 };
