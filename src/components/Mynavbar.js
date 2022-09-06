@@ -10,7 +10,14 @@ import { Cartwidget } from './CartWidget';
 /*Bootstrap Styles */
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./Mynavbar.css"
-
+// Router dom
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  NavLink,
+} from "react-router-dom";
 
 
 
@@ -18,9 +25,11 @@ export const Mynavbar=()=>{
     return(
       <div> 
         <header>
-        <h1>
-          ArmorGames&Comics/Mangas<span>ReactJS</span>
-        </h1>
+       <NavLink as={Link} to ="/">
+         <h1>
+           ArmorGames&Comics/Mangas<span>ReactJS</span>
+         </h1>
+       </NavLink>
         <Navbar bg="light" expand="lg" >
         <Container fluid>
         <ion-icon name="game-controller-outline"></ion-icon>
@@ -33,8 +42,12 @@ export const Mynavbar=()=>{
               style={{ maxHeight: '100px'}}
               navbarScroll
             >
-              <Nav.Link href="#action1" className='nav-underline'>Home</Nav.Link>
-              <Nav.Link href="#action2" className='nav-underline'>Link</Nav.Link>
+              <NavLink   as={Link} to="/category" className={({isActive})=>isActive? "claseActive" : "claseInactive"}>Categorias</NavLink>
+              <NavLink   as={Link} to="/category/mangas" className={({isActive})=>isActive? "claseActive" : "claseInactive"}>Mangas</NavLink>
+              <NavLink   as={Link} to="/category/gaming" className={({isActive})=>isActive? "claseActive" : "claseInactive"}>Gaming</NavLink>
+              <NavLink   as={Link} to="/category/Accion" className={({isActive})=>isActive? "claseActive" : "claseInactive"}>Accion</NavLink>
+              <NavLink   as={Link} to="/otro" className={({isActive})=>isActive? "claseActive" : "claseInactive"}>Otro</NavLink>
+              
               <NavDropdown title="Link2" id="navbarScrollingDropdown">
                 <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
                 <NavDropdown.Item href="#action4"> Another action</NavDropdown.Item>
@@ -54,6 +67,7 @@ export const Mynavbar=()=>{
             </Form>
           </Navbar.Collapse>
         </Container>
+      
       </Navbar> 
       </header>
       </div>

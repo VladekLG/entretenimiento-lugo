@@ -13,9 +13,8 @@ import { Icon } from '@iconify/react';
 const agregar =(contador,stock)=>{
   alert(`Añadiste ${contador} con stock de ${stock}`)
 }
-                              // usar estas props en mi lista de arrays creada --> Stock, initial, precio guardarla en elarray y destructurarlos abajo
-export const ItemDetail = ({item,  stock,initial,precio  }) => {
-  const {developer,thumbnail,title,genre,release_date,short_description} = item
+export const ItemDetail = ({item}) => {
+  const {imagen,nombre,autor,precio,unidades,unidadInicial,genero,categoria,text} = item
 
   return (
     <div>
@@ -23,38 +22,29 @@ export const ItemDetail = ({item,  stock,initial,precio  }) => {
         <Row>
           <Col>
             <Figure>
-              <Figure.Image
-                width={700}
-                height={400}
-                alt="171x180"
-                src={thumbnail}
-              />
-              <Figure.Caption className="figureText">
-                {short_description}
-              </Figure.Caption>
+              <Figure.Image width={450} alt="171x180" src={imagen} />
+              <Figure.Caption className="figureText">{text}</Figure.Caption>
             </Figure>
           </Col>
 
           <Col>
             <Row className="Row">
-              <h1>{title}</h1>
+              <h1>{nombre}</h1>
+              <hr style={{ color: "black" }}></hr>
               <h4>
-                Género: {genre} | Desarollador: {developer}
+                Género: {genero} | Categoria: {categoria}
               </h4>
-              <h4>Fecha de lanzamiento:{release_date}</h4>
+              <h4>Autor: {autor}</h4>
             </Row>
             <hr></hr>
             <Row>
               <h2 className="precio">${precio}</h2>
-
-               {/* Aqui deberia heredar stock initial desde el array creado de objetos. */}
               <ItemCount
-                stock={stock}  /*le pasara al componente el valor que defini en stock seria 10 que esta definido en ItemDetailContainer */
-                initial={initial} /*le pasara al componente el valor que defini en initial seria 0 que esta definido en ItemDetailContainer */
-                onAdd={agregar} /*Al definir una funcion como propiedad, esta debera ser declarada aqui arriba*/
+                stock={unidades}
+                initial={unidadInicial}
+                onAdd={agregar}
               ></ItemCount>
             </Row>
-
             <div className="iconos">
               <h4 style={{ marginRight: "2rem" }}>
                 Comparte en las redes sociales:
@@ -69,14 +59,14 @@ export const ItemDetail = ({item,  stock,initial,precio  }) => {
                 controlId="exampleForm.ControlInput1"
               >
                 <Form.Label>Ingresa tu Email</Form.Label>
-                <Form.Control type="email" placeholder="nombre@hotmail.com" />
+                <Form.Control type="email" placeholder="nombre@hotmail.com"/>
               </Form.Group>
               <Form.Group
                 className="mb-3"
                 controlId="exampleForm.ControlTextarea1"
               >
                 <Form.Label>Escribe tu consulta aqui</Form.Label>
-                <Form.Control as="textarea" rows={3} />
+                <Form.Control as="textarea" rows={3}/>
               </Form.Group>
             </Form>
           </Col>

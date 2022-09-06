@@ -1,6 +1,6 @@
 import React from 'react'
-import { Item } from './Item'
-
+import {Item} from './Item'
+import './ItemList.css'
   // hacer un map aqui con componentes items
 //  items--> contiene el arreglo 
 // item--> es cada elemento del array a iterar
@@ -11,7 +11,7 @@ export const ItemList = ({items}) => {
     <div>
       <div className="divContainer">
         {items.map((item) => {
-          return <Item item={item} key={item.id}/>;
+          return <Item item={item} key={item.id} />;
         })}
       </div>
     </div>
