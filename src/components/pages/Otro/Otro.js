@@ -1,7 +1,5 @@
 import React from 'react'
 
 export const Otro = () => {
-  return (
-    <div>Otro</div>
-  )
+  return <div>Otro</div>;
 }

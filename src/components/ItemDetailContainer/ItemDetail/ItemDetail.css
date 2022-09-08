@@ -7,11 +7,20 @@ border-radius: 1rem;
 }
 
 .figureText{
-    justify-content: center;
+justify-content: center;
 color:rgb(255, 255, 255);
-font-size: 1.7rem;
+font-size: 1.4rem;
 -webkit-text-stroke: 1px rgb(10, 10, 10);
 }
+
+.figureImage {
+    width: 500px;
+    margin: 0.5em;
+    border: 1em double rgba(4, 134, 255, 0.333);
+    border-radius: 1rem;
+    margin-left: 10%;
+}
+
 
 
 h1{

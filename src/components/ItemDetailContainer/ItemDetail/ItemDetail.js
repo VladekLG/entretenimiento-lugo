@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -10,10 +10,16 @@ import "./ItemDetail.css"
 import { Icon } from '@iconify/react';
 
 
-const agregar =(contador,stock)=>{
-  alert(`Añadiste ${contador} con stock de ${stock}`)
-}
+
+
 export const ItemDetail = ({item}) => {
+
+  const [value,setValue] = useState(0)
+  const onAdd =(contador)=>{
+    alert(`Añadiste ${contador} productos a tu carrito`)
+    setValue(contador)
+  }
+
   const {imagen,nombre,autor,precio,unidades,unidadInicial,genero,categoria,text} = item
 
   return (
@@ -22,7 +28,7 @@ export const ItemDetail = ({item}) => {
         <Row>
           <Col>
             <Figure>
-              <Figure.Image width={450} alt="171x180" src={imagen} />
+              <Figure.Image className='figureImage' alt="171x180" src={imagen} />
               <Figure.Caption className="figureText">{text}</Figure.Caption>
             </Figure>
           </Col>
@@ -35,6 +41,11 @@ export const ItemDetail = ({item}) => {
                 Género: {genero} | Categoria: {categoria}
               </h4>
               <h4>Autor: {autor}</h4>
+              <hr></hr>
+              {value > 0 ?
+               <h4>Productos agregados al carrito : {value}</h4>
+               : null
+              }    
             </Row>
             <hr></hr>
             <Row>
@@ -42,7 +53,7 @@ export const ItemDetail = ({item}) => {
               <ItemCount
                 stock={unidades}
                 initial={unidadInicial}
-                onAdd={agregar}
+                onAdd={onAdd}
               ></ItemCount>
             </Row>
             <div className="iconos">

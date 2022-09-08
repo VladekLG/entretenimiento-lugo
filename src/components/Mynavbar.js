@@ -40,14 +40,12 @@ export const Mynavbar=()=>{
             <Nav
               className="m-auto my-2 my-lg-0"
               style={{ maxHeight: '100px'}}
-              navbarScroll
-            >
+              navbarScroll>
               <NavLink   as={Link} to="/category" className={({isActive})=>isActive? "claseActive" : "claseInactive"}>Categorias</NavLink>
               <NavLink   as={Link} to="/category/mangas" className={({isActive})=>isActive? "claseActive" : "claseInactive"}>Mangas</NavLink>
               <NavLink   as={Link} to="/category/gaming" className={({isActive})=>isActive? "claseActive" : "claseInactive"}>Gaming</NavLink>
               <NavLink   as={Link} to="/category/Accion" className={({isActive})=>isActive? "claseActive" : "claseInactive"}>Accion</NavLink>
-              <NavLink   as={Link} to="/otro" className={({isActive})=>isActive? "claseActive" : "claseInactive"}>Otro</NavLink>
-              
+              <NavLink   as={Link} to="/otro" className={({isActive})=>isActive? "claseActive" : "claseInactive"}>Otro</NavLink>  
               <NavDropdown title="Link2" id="navbarScrollingDropdown">
                 <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
                 <NavDropdown.Item href="#action4"> Another action</NavDropdown.Item>

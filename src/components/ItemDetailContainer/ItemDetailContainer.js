@@ -28,7 +28,7 @@ export const ItemDetailContainer = () => {
   return (
     <div>
       {loading ? (<Loading></Loading>) 
-               : (<div><ItemDetail item={item} /></div>)}
+               : (<div style={{display:'flex', justifyContent:'center'}}><ItemDetail item={item} /></div>)}
     </div>
   );
 };
