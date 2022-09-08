@@ -65,3 +65,16 @@ color:rgba(0, 0, 0, 0.48)
     -webkit-text-stroke: 1px rgb(3, 3, 3);
 }
 
+.button{
+    border: 1px solid black;
+    border-radius: 1rem;
+    width: 120%;
+    background-color: rgb(42, 40, 40);
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+}
+
+.button:hover{
+    font-size: 1.8rem;
+    color: red;
+}
