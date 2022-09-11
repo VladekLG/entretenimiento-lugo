@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -6,23 +6,25 @@ import Figure from 'react-bootstrap/Figure'
 import Form from 'react-bootstrap/Form';
 import { ItemCount } from '../../ItemListContainer/ItemCount';
 import "./ItemDetail.css"
-import { ThemeContext } from '../../../context/ThemeContext';
 import { Link } from 'react-router-dom';
 // Iconos
 import { Icon } from '@iconify/react';
+import { CartContext } from '../../../context/CartContext';
 
 
 
 
 export const ItemDetail = ({item}) => {
 
-  const {themeColor} = useContext(ThemeContext)
+  const {addProduct} = useContext(CartContext)
 
   const [value,setValue] = useState(0)
   
-  const onAdd =(contador)=>{
-    setValue(contador)
-  }
+  const onAdd = (contador) => {
+    setValue(contador);
+    const newProduct = { ...item, quantity: contador };
+    addProduct(newProduct);
+  };
 
   const {imagen,nombre,autor,precio,unidades,unidadInicial,genero,categoria,text} = item
 
@@ -42,10 +44,11 @@ export const ItemDetail = ({item}) => {
               <h1>{nombre}</h1>
               <hr style={{ color: "black" }}></hr>
               <h4>
-                Género: {genero} | Categoria: {categoria} | {themeColor}
+                Género: {genero} | Categoria: {categoria}
               </h4>
               <h4>Autor: {autor}</h4>
               <hr></hr>
+
               {value > 0 ?            
                <div style={{width:'75%', marginLeft:'2rem'}}>
                 <Link as={Link} to="/cart">
@@ -53,7 +56,8 @@ export const ItemDetail = ({item}) => {
                 </Link >
                </div>
                : null
-              }           
+              }       
+
             </Row>
             <hr></hr>
             <Row>

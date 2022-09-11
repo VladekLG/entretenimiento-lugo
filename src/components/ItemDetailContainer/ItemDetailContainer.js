@@ -14,7 +14,7 @@ export const ItemDetailContainer = () => {
     const getData = async () => {
       try {
         const peticion = await obtenerItemDetail();
-        setItem(peticion.find((item) => item.id == id));
+        setItem(peticion.find((item) => item.id === parseInt(id)));
         setLoading(false);
       } catch (error) {
         console.log("Hubo un error");

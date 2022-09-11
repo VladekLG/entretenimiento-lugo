@@ -9,13 +9,8 @@ export const Carousel3D = (props) => {
     window.onresize = ()=>{
         responsiveDisplay();
     }
-
     useEffect(()=>{
-
         responsiveDisplay();
-
-
-
     })
 
     function responsiveDisplay(){

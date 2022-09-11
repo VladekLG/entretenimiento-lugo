@@ -8,18 +8,17 @@ import { BrowserRouter,Routes,Route} from 'react-router-dom'
 import { Otro } from "./components/pages/Otro/Otro";
 import { PaginaError } from "./components/pages/PaginaError/PaginaError";
 import { Cart } from "./components/pages/Cart/Cart";
-import { ThemeContext } from "./context/ThemeContext";
-import { UserContext } from "./context/UserContext";
+import { CartProvider } from "./context/CartContext";
+
 
 
 function App() {
   return (
-        <ThemeContext.Provider value={{themeColor:'black'}}>
+          <CartProvider>
+            {/* La propiedad Children son todos estos componentes que estan envueltos por CartProvider */}
             <BrowserRouter>
               <div >
-                <UserContext.Provider value={{rol:"Administrador"}}>
                   <Mynavbar/>  
-                </UserContext.Provider>
                   <Routes>  
                     <Route path='/' element={<ItemListContainer />}/>
                     <Route path='/category' element={<ItemListContainer />}/>                             
@@ -32,7 +31,7 @@ function App() {
                   <Footer></Footer>
               </div>  
             </BrowserRouter>
-        </ThemeContext.Provider>
+          </CartProvider>
   );
 }
 
