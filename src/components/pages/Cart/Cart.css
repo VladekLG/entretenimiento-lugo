@@ -1,0 +1,25 @@
+.tdImagen{
+    height: 25px;
+    width: 25px;
+}
+
+.btnTd{
+    margin-top: 1rem;
+    color: white!important;
+    border: 2px solid black!important;
+    background-color: red!important;
+}
+
+
+
+.thead{
+    color:white;
+    background-color: black;
+}
+
+
+
+.tbody{
+    background-color: gray;
+}
+

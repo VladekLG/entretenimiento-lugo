@@ -7,8 +7,9 @@ import { Footer } from "./components/Footer/Footer";
 import { BrowserRouter,Routes,Route} from 'react-router-dom'
 import { Otro } from "./components/pages/Otro/Otro";
 import { PaginaError } from "./components/pages/PaginaError/PaginaError";
-import { Cart } from "./components/pages/Cart/Cart";
+import { CartContainer } from "./components/pages/Cart/CartContainer";
 import { CartProvider } from "./context/CartContext";
+import { Firebase } from "./components/pages/FireBase/Firebase";
 
 
 
@@ -26,7 +27,8 @@ function App() {
                     <Route path='/item/:id' element={<ItemDetailContainer/>}></Route>
                     <Route path ='/otro' element ={<Otro/>}/>
                     <Route path ='/*' element ={<PaginaError/>}/>
-                    <Route path ='/cart' element = {<Cart/>}/>
+                    <Route path ='/cart' element = {<CartContainer/>}/>
+                    <Route path ='/firebase' element={<Firebase/>}/>
                   </Routes>
                   <Footer></Footer>
               </div>  

@@ -1,24 +1,38 @@
 import React from 'react'
 import { useContext } from 'react'
 import { CartContext } from '../../../context/CartContext'
+import Table from 'react-bootstrap/Table';
 
-export const Cart = () => {
-  const {productCartList,deleteProduct,deleteAllProducts} = useContext(CartContext)
-  console.log('productCartList', productCartList)
+import './Cart.css'
+
+
+export const Cart = ({item}) => {
+    const {deleteProduct} = useContext(CartContext)
   return (
-    <div>
-      <p>Cart</p>
-      {
-        productCartList.map ( item => (
-          <div>
-            <p key={item.autor}>{item.autor}</p>
-            <img src={item.imagen} alt="imagen" style={{width:'10rem'}} />
-            <p>Cantidad:{item.quantity}</p>
-            <button key={item.id} onClick={()=>deleteProduct(item.id)}>Eliminar producto</button>
-            <button  onClick={()=>deleteAllProducts(item)}>Eliminar todos los productos</button>
-          </div>          
-        ))
-      }
+    <div style={{textAlign:'center',justifyContent:'center'}}>
+      <Table striped bordered hover>
+        <thead className='thead'>
+          <tr style={{border:'2px solid purple'}}>
+            <th>Imagen</th>
+            <th style={{width:'20%'}}>Producto</th>
+            <th style={{width:'5%'}}>Cantidad</th>
+            <th style={{width:'10%'}}>Precio por Unidad</th>
+            <th style={{width:'10%'}}>Precio Total</th>
+            <th>Remover Producto</th>
+          </tr>
+        </thead>
+        <tbody className='tbody' style={{border:'2px solid purple'}}>
+          <tr>
+            <td className='tdImagen'><img src={item.imagen} alt="imagen"/></td>
+            <td>{item.nombre}</td>
+            <td>{item.quantity}</td>
+            <td>${item.precio}</td>
+            <td>${item.precio*item.quantity}</td>
+            <button key={item.id} onClick={()=>deleteProduct(item.id)} className='btnTd'>Eliminar producto</button>
+          </tr>
+        </tbody>
+      </Table>
     </div>
-  )
+
+  );
 }

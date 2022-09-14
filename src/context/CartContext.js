@@ -12,6 +12,15 @@ export const CartProvider = ({children}) =>{
     const [productCartList, setProductCartList] = useState([])
 
 
+    const getTotalProducts = ()=>{
+      const totalProducts = productCartList.reduce((acc,item)=>acc+item.quantity,0)
+      return totalProducts;
+    }
+
+    const getTotalPrice = ()=>{
+      const totalPrice = productCartList.reduce((acc,item)=>acc+item.precio*item.quantity,0)
+      return totalPrice;
+    }
 
 
     const addProduct = (product) => {
@@ -28,6 +37,7 @@ export const CartProvider = ({children}) =>{
       } else {
         const newList = [...productCartList, product];
         setProductCartList(newList);
+      
       }
     };
 
@@ -37,12 +47,14 @@ export const CartProvider = ({children}) =>{
         setProductCartList(newArray)
     }
     
-    const deleteAllProducts = () =>{
+    const clearCart = () =>{
         setProductCartList([])
     }
+    
+  
 
     return(                                 
-        <CartContext.Provider value={{productCartList, addProduct, deleteProduct,deleteAllProducts}}>
+        <CartContext.Provider value={{productCartList, addProduct, deleteProduct,clearCart,getTotalProducts,getTotalPrice}}>
             {/* ..Components */}
             {children}
         </CartContext.Provider>

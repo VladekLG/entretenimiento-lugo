@@ -52,7 +52,7 @@ export const ItemDetail = ({item}) => {
               {value > 0 ?            
                <div style={{width:'75%', marginLeft:'2rem'}}>
                 <Link as={Link} to="/cart">
-                  <button className='button'>Finalizar Compra </button>
+                  <button className='button'>Ir al Carrito</button>
                 </Link >
                </div>
                : null
