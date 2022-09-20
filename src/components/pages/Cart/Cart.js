@@ -6,6 +6,8 @@ import Table from 'react-bootstrap/Table';
 import './Cart.css'
 
 
+
+
 export const Cart = ({item}) => {
     const {deleteProduct} = useContext(CartContext)
   return (
@@ -27,8 +29,8 @@ export const Cart = ({item}) => {
             <td>{item.nombre}</td>
             <td>{item.quantity}</td>
             <td>${item.precio}</td>
-            <td>${item.precio*item.quantity}</td>
-            <button key={item.id} onClick={()=>deleteProduct(item.id)} className='btnTd'>Eliminar producto</button>
+            <td>${item.precio * item.quantity}</td>
+            <button onClick={()=>deleteProduct(item.id)} className='btnTd'>Eliminar producto</button>
           </tr>
         </tbody>
       </Table>

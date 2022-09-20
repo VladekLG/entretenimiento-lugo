@@ -11,22 +11,22 @@ import { Link } from 'react-router-dom';
 import { Icon } from '@iconify/react';
 import { CartContext } from '../../../context/CartContext';
 
-
+// Modificar
 
 
 export const ItemDetail = ({item}) => {
 
   const {addProduct} = useContext(CartContext)
-
   const [value,setValue] = useState(0)
   
   const onAdd = (contador) => {
     setValue(contador);
-    const newProduct = { ...item, quantity: contador };
-    addProduct(newProduct);
+    addProduct(item,contador);
   };
 
+    
   const {imagen,nombre,autor,precio,unidades,unidadInicial,genero,categoria,text} = item
+  
 
   return (
     <div>
@@ -63,8 +63,8 @@ export const ItemDetail = ({item}) => {
             <Row>
               <h2 className="precio">${precio}</h2>
               <ItemCount
-                stock={unidades}
-                initial={unidadInicial}
+                stock={10}
+                initial={0}
                 onAdd={onAdd}
               ></ItemCount>
             </Row>

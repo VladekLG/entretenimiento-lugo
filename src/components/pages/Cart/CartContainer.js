@@ -6,7 +6,7 @@ import { Cart } from './Cart'
 
 export const CartContainer = () => {
   const {productCartList,getTotalPrice,clearCart} = useContext(CartContext)
-
+  console.log('product cardlist',productCartList)
   return (
     <div >
     <div>
@@ -20,7 +20,7 @@ export const CartContainer = () => {
 
 
       {productCartList.length > 0 
-      ? (productCartList.map((item) => <Cart item={item}/>)) 
+      ? (productCartList.map((item) => <Cart key={item.id} item={item}/>)) 
       
       : (<div>
           <div className='card card-body py-5 text-center shadow-sm'>
@@ -41,7 +41,7 @@ export const CartContainer = () => {
                         </h4>
                         <hr/>
                         <Link to="/checkout" className="btn btn-primary"> Finalizar Compra </Link>
-                        <button className="btn btn-primary mt-3"  onClick={()=>clearCart(productCartList)}>Vaciar Carrito</button>
+                        <button className="btn btn-primary mt-3"  onClick={clearCart}>Vaciar Carrito</button>
                     </div>
                 </div>
         </div>
