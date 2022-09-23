@@ -1,3 +1,4 @@
+import { addDoc, collection, getFirestore } from 'firebase/firestore'
 import React from 'react'
 import { useContext } from 'react'
 import {Link } from 'react-router-dom'
@@ -7,6 +8,31 @@ import { Cart } from './Cart'
 export const CartContainer = () => {
   const {productCartList,getTotalPrice,clearCart} = useContext(CartContext)
   console.log('product cardlist',productCartList)
+
+
+  
+
+
+  const sendOrder = (e)=>{
+    e.preventDefault();
+    const order = {
+      buyer: {
+        name: e.target[0].value,
+        phone: e.target[1].value,
+        email: e.target[2].value,
+      },
+      items: productCartList.map(product => ({id:product.id, title:product.nombre,imagen:product.imagen, price:product.precio, quantity:product.quantity})),
+      total: getTotalPrice(),
+    };
+
+    const db = getFirestore();
+    const ordersCollection = collection(db,'orders');
+    addDoc(ordersCollection, order )
+    .then(({id})=> console.log(id))
+  }
+
+
+  
   return (
     <div >
     <div>
@@ -40,11 +66,21 @@ export const CartContainer = () => {
                             <span className="float-end"></span>
                         </h4>
                         <hr/>
-                        <Link to="/checkout" className="btn btn-primary"> Finalizar Compra </Link>
+                        
+                        <form onSubmit={sendOrder}>
+                          <input type="text" placeholder='nombre' />
+                          <input type="text" placeholder='telefono' />
+                          <input type="email" placeholder='email' />
+                          <button type='submit'>Emitir Compra</button>
+                          {/* <Link to="/checkout" className="btn btn-primary" > Emitir Compra </Link> */}
+                        </form>
                         <button className="btn btn-primary mt-3"  onClick={clearCart}>Vaciar Carrito</button>
                     </div>
                 </div>
         </div>
+        
+
+
     </div>
   );
 }

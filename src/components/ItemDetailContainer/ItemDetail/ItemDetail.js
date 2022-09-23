@@ -27,7 +27,6 @@ export const ItemDetail = ({item}) => {
     
   const {imagen,nombre,autor,precio,unidades,unidadInicial,genero,categoria,text} = item
   
-
   return (
     <div>
       <Container style={{ border: "1px solid white" }} className="itemDetail">
