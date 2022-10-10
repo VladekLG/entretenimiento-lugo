@@ -31,7 +31,7 @@ export const CartProvider = ({children}) =>{
         setProductCartList(newList)
        
       }
-      toast.success('Añadido al carrito de compras')
+      toast.success('Añadido al carrito de compras')  
     }
 
     const deleteProduct = (idProduct)=>{
