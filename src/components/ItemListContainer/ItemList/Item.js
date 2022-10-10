@@ -24,8 +24,6 @@ export const Item = ({item}) => {
         <Card.Text className='priceStyle'>
           Precio: <span>${precio}</span> 
         </Card.Text>
-      {/* Aqui asigno una ruta para tenerla de referencia cuando entro al link del boton  */}
-      {/* Uso template string para hacer referencia al id de la card */}
         <Link as={Link} to={`/item/${id}`} id='detailStyle'><Button variant="contained" color="secondary">Ver detalles</Button></Link>
       </Card.Body>
     </Card>

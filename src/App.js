@@ -14,7 +14,6 @@ import './components/AllStyles.css'
 function App() {
   return (
           <CartProvider>
-            {/* La propiedad Children son todos estos componentes que estan envueltos por CartProvider */}
             <BrowserRouter>
               <div >
                   <Mynavbar/>  
@@ -23,6 +22,7 @@ function App() {
                     <Route path ='/*' element ={<PaginaError/>}/>
                     <Route path='/category' element={<ItemListContainer/>}/>                             
                     <Route path ='/category/:categoryType' element ={<ItemListContainer/>}/>
+                    <Route path ='/category/:categoryType/:genreType' element ={<ItemListContainer/>}/>
                     <Route path='/item/:id' element={<ItemDetailContainer/>}></Route>
                     <Route path ='/cart' element = {<CartContainer/>}/>
                   </Routes>

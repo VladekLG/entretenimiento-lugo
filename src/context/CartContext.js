@@ -1,15 +1,11 @@
 import { createContext, useState } from "react";
 import Swal from 'sweetalert2'
-
-// 1. Importamos CreatContext y lo igualamos a createContext()
-// 2. Creamos un componente llamado CartProvider y dentro de sus parametros le pasamos un children
-
+import toast from 'react-hot-toast';
 export const CartContext = createContext();
 
 export const CartProvider = ({children}) =>{
-    // const productCartList = arrayItems
-    const [productCartList, setProductCartList] = useState([])
 
+    const [productCartList, setProductCartList] = useState([])
 
     const isInCart = (id)=>{
       const elementExists = productCartList.some((elemento)=>elemento.id === id);
@@ -20,24 +16,29 @@ export const CartProvider = ({children}) =>{
 
       const newList = [...productCartList]
       if (isInCart(product.id)) {
+        
         const productIndex = productCartList.findIndex(element=>element.id === product.id)
         newList[productIndex].quantity = newList[productIndex].quantity + qty;
         newList[productIndex].totalPrice = newList[productIndex].quantity * newList[productIndex].precio;
         setProductCartList(newList)
+     
+      
       } else {
         
         const newProduct = {...product,quantity:qty,totalPrice:qty*product.precio}
         const newList = [...productCartList];
         newList.push(newProduct);
         setProductCartList(newList)
+       
       }
-
+      toast.success('Añadido al carrito de compras')
     }
 
     const deleteProduct = (idProduct)=>{
           const copyArray = [...productCartList];
           const newArray = copyArray.filter(el=>el.id !== idProduct )
           setProductCartList(newArray)
+          toast.error("Producto eliminado")
       }
 
     const clearCart = () =>{
@@ -80,7 +81,6 @@ export const CartProvider = ({children}) =>{
 
     return(                                 
         <CartContext.Provider value={{productCartList, addProduct,deleteProduct,clearCart,getTotalProducts,getTotalPrice,clearCartAfterBuy}}>
-            {/* ..Components */}
             {children}
         </CartContext.Provider>
     )

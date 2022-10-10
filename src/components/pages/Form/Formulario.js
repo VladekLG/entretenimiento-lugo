@@ -29,6 +29,8 @@ export const Formulario = () => {
 				nombre:'',
 				correo:'',
 				telefono:'',
+				pais:'Argentina',
+				texto:'',
 			}}
 			validate={(valores)=>{
 				let errores = {}
@@ -48,6 +50,10 @@ export const Formulario = () => {
 				if(!valores.telefono){
 					errores.telefono = 'Por favor ingresa un numero de telefono/celular'
 				}
+				// Validaciones para select
+				if(!valores.pais){
+					errores.pais= 'Por favor selecciona un Pais'
+				}
 				return errores;			
 			}}
 			onSubmit={(valores)=>{
@@ -57,6 +63,7 @@ export const Formulario = () => {
 					  email: valores.correo,
 					  phone: valores.telefono,
 					  country: valores.pais,
+					  text: valores.texto,
 					},
 					items: productCartList.map(product => ({id:product.id, title:product.nombre,imagen:product.imagen, price:product.precio, quantity:product.quantity})),
 					total: getTotalPrice(),
@@ -130,8 +137,8 @@ export const Formulario = () => {
 
 				<div style={{color:'black'}}>
 					<Field name="pais" as="select">
-						<option value="Chile" key="Chile">Chile</option>
 						<option value="Argentina" key="Argentina">Argentina</option>
+						<option value="Chile" key="Chile">Chile</option>
 						<option value="Peru" key="Peru">Peru</option>
 						<option value="Uruguay" key="Uruguay">Uruguay</option>
 					</Field>
@@ -150,7 +157,7 @@ export const Formulario = () => {
 				</div>
 
 				<div>
-					<Field name="mensaje" as="textarea" placeholder="Mensaje"/>
+					<Field name="texto" as="textarea" placeholder="Mensaje"/>
 				</div>
 
 				<button type='submit'>Emitir Compra</button>  

@@ -9,6 +9,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button'
+import { Toaster } from 'react-hot-toast';
 import './Cart.css'
 //MUI Themes
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -32,6 +33,7 @@ export const Cart = ({item}) => {
   return (
     <>
     <ThemeProvider theme={theme}>
+      <Toaster position="top-left"></Toaster>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 700 }} aria-label="spanning table">
 

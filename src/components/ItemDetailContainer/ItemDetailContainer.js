@@ -25,13 +25,7 @@ export const ItemDetailContainer = () => {
         setLoading(false)
     }).catch(error=>console.log(error))
     }, 1000);
-
-    
-
   },[id]);
-
-
-  
   return (
     <div>
       {loading ? (<Loading></Loading>) 
