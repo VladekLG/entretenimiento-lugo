@@ -1,0 +1,32 @@
+.Carousel2{
+    text-align: center;
+    justify-content: center;
+}
+
+.Carousel2 h3{
+    color: white;
+    margin: 1rem;
+    -webkit-text-stroke: 1.4px rgba(255, 0, 204, 0.463);
+}
+
+
+.Carousel2 img{
+    width: 80%;
+    margin-left: 10%;
+}
+.Carousel2 h4{
+    color: red;
+    font-weight: 200;
+    border: 1px solid white;
+    background-color: rgba(255, 255, 255, 0.043);
+    margin-left: 40%;
+    margin-bottom: 1rem;
+    width: 20%;
+    border-radius: 1rem;
+}
+
+.Carousel2 p{
+    font-size: 1rem;
+    -webkit-text-stroke: 0.2px rgb(10, 10, 10);
+    color: white;
+}

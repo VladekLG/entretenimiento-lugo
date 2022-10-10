@@ -5,11 +5,11 @@ import Col from 'react-bootstrap/Col';
 import Figure from 'react-bootstrap/Figure'
 import Form from 'react-bootstrap/Form';
 import { ItemCount } from '../../ItemListContainer/ItemCount';
-import "./ItemDetail.css"
 import { Link } from 'react-router-dom';
 // Iconos
 import { Icon } from '@iconify/react';
 import { CartContext } from '../../../context/CartContext';
+import Button from '@mui/material/Button'
 
 // Modificar
 
@@ -49,9 +49,9 @@ export const ItemDetail = ({item}) => {
               <hr></hr>
 
               {value > 0 ?            
-               <div style={{width:'75%', marginLeft:'2rem'}}>
+               <div>
                 <Link as={Link} to="/cart">
-                  <button className='button'>Ir al Carrito</button>
+                    <Button variant="outlined" color="secondary">Ir al Carrito</Button>
                 </Link >
                </div>
                : null

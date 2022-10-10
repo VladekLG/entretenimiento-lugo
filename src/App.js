@@ -5,13 +5,11 @@ import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetail
 import { Mynavbar } from "./components/Mynavbar";
 import { Footer } from "./components/Footer/Footer";
 import { BrowserRouter,Routes,Route} from 'react-router-dom'
-import { Otro } from "./components/pages/Otro/Otro";
+import { Home } from "./components/pages/Home/Home";
 import { PaginaError } from "./components/pages/PaginaError/PaginaError";
 import { CartContainer } from "./components/pages/Cart/CartContainer";
 import { CartProvider } from "./context/CartContext";
-
-
-
+import './components/AllStyles.css'
 
 function App() {
   return (
@@ -21,12 +19,11 @@ function App() {
               <div >
                   <Mynavbar/>  
                   <Routes>  
-                    <Route path='/' element={<ItemListContainer />}/>
-                    <Route path='/category' element={<ItemListContainer />}/>                             
+                    <Route path='/' element={<Home/>}/>
+                    <Route path ='/*' element ={<PaginaError/>}/>
+                    <Route path='/category' element={<ItemListContainer/>}/>                             
                     <Route path ='/category/:categoryType' element ={<ItemListContainer/>}/>
                     <Route path='/item/:id' element={<ItemDetailContainer/>}></Route>
-                    <Route path ='/otro' element ={<Otro/>}/>
-                    <Route path ='/*' element ={<PaginaError/>}/>
                     <Route path ='/cart' element = {<CartContainer/>}/>
                   </Routes>
                   <Footer></Footer>
@@ -35,5 +32,4 @@ function App() {
           </CartProvider>
   );
 }
-
 export default App;

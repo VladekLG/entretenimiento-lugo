@@ -1,25 +1,49 @@
-.tdImagen{
-    height: 25px;
-    width: 25px;
+.cart-title {
+    font-size: 1em;
+    -webkit-text-stroke: 1px #ff00ffab;
+    background-color: rgba(71, 7, 74, 0.208);
+    padding: 1em;
+    text-align: center;
+    color: white;
 }
 
-.btnTd{
-    margin-top: 1rem;
-    color: white!important;
-    border: 2px solid black!important;
-    background-color: red!important;
+.tdImagen {
+    height: 200px;
+    width: 160px;
+    border: 4px inset rgb(0, 0, 0);
+    border-radius: 1em;
+}
+
+.total-style {
+    margin: 1em;
+}
+.subtotal{
+    background-color: rgba(0, 0, 0, 0.76);
+    border-radius: 1rem;
+    padding: 2rem;
+    border: 2px solid rgba(255, 255, 255, 0.099)
+}
+.total-style h4 {
+    -webkit-text-stroke: 1px #4b04ffab;
 }
 
 
-
-.thead{
-    color:white;
-    background-color: black;
+.thead {
+    -webkit-text-stroke: 1px rgba(255, 0, 255, 0.529);
+    background-color: rgb(0, 0, 0);
 }
-
-
-
 .tbody{
-    background-color: gray;
+    background-color: rgb(0, 0, 0);
 }
 
+.table-cell{
+    font-size: 1.5em!important;
+    color: white!important;
+}
+
+.table-cell-body{
+    font-style: italic!important;
+    -webkit-text-stroke: 1px #4b04ffab!important;
+    font-size: 1.3em!important;
+    color: white!important;
+}

@@ -42,7 +42,7 @@ export const Carousel3D = (props) => {
 
 
   return (
-    <div className='carousel'>
+    <div className='carousel1'>
         <div className='box'>
             {props.children}
         </div>

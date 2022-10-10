@@ -1,12 +1,13 @@
 import React from 'react'
 import Card from "react-bootstrap/Card"
-import './Item.css' 
+
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link
 } from "react-router-dom";
+import Button from '@mui/material/Button'
 
 
 export const Item = ({item}) => {
@@ -25,7 +26,7 @@ export const Item = ({item}) => {
         </Card.Text>
       {/* Aqui asigno una ruta para tenerla de referencia cuando entro al link del boton  */}
       {/* Uso template string para hacer referencia al id de la card */}
-        <Link as={Link} to={`/item/${id}`} id='detailStyle'><button>Ver detalles</button></Link>
+        <Link as={Link} to={`/item/${id}`} id='detailStyle'><Button variant="contained" color="secondary">Ver detalles</Button></Link>
       </Card.Body>
     </Card>
 

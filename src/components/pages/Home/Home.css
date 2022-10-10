@@ -1,0 +1,64 @@
+/* PAGE HOME STYLES */
+.titleIndex{
+    margin: 0;
+    font-size: 1.6rem;
+    padding: 1.2rem;
+    color: rgba(255, 255, 255, 0.767);
+    -webkit-text-stroke: 0.8px black;
+    font-weight: bolder;
+   
+}
+
+.divtitle{
+    background: #8E2DE2;  
+    background: -webkit-linear-gradient(to right, #120233, #ff00e6); 
+    background: linear-gradient(to right, #150437, #ff00e6cd); 
+    border: 1px solid black;
+}
+
+
+
+.div1{
+    padding-top: 1rem;
+    background-color: #07000736;
+    display: flex;
+    justify-content:space-evenly;
+    text-align: center;
+}
+
+.div1 h3{
+    font-size: 1.2rem;
+    color:#ffffff78
+}
+
+.div1 p{
+    font-size: 1rem;
+    font-weight: bolder;
+    color: #ffffff9b;
+    font-style: italic;
+}
+
+.i {
+    float: left;
+    margin-left: 2px !important;
+  }
+
+
+  .h2Subtitle{
+   font-size: 1.5rem;
+   padding: 1rem;
+    margin: 0;
+    border: 1px solid black;
+   color: white;
+   background: #8E2DE2;  
+   background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2); 
+   background: linear-gradient(to right, #4A00E0, #8E2DE2); 
+  }
+
+#verticle-line{
+    width: 3px;
+    border-radius: 10px;
+    height: 9vh;
+    background-color: rgba(255, 11, 202, 0.54);
+}
+ 

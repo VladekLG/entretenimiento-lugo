@@ -1,6 +1,5 @@
 import React from 'react'
 import {Item} from './Item'
-import './ItemList.css'
   // hacer un map aqui con componentes items
 //  items--> contiene el arreglo 
 // item--> es cada elemento del array a iterar

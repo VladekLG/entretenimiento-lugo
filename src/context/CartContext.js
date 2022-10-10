@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import Swal from 'sweetalert2'
 
 // 1. Importamos CreatContext y lo igualamos a createContext()
 // 2. Creamos un componente llamado CartProvider y dentro de sus parametros le pasamos un children
@@ -15,7 +16,6 @@ export const CartProvider = ({children}) =>{
       return elementExists;
     }
 
-    
     const addProduct = (product,qty)=>{
 
       const newList = [...productCartList]
@@ -34,7 +34,6 @@ export const CartProvider = ({children}) =>{
 
     }
 
-
     const deleteProduct = (idProduct)=>{
           const copyArray = [...productCartList];
           const newArray = copyArray.filter(el=>el.id !== idProduct )
@@ -42,7 +41,30 @@ export const CartProvider = ({children}) =>{
       }
 
     const clearCart = () =>{
-          setProductCartList([])
+       
+          Swal.fire({
+            title:'Advertencia',
+            text: '¿Esta seguro que desea eliminar todos los productos que tiene agregado en el carrito?',
+            icon: 'warning',
+            showDenyButton:true,
+            denyButtonText: "No",
+            confirmButtonText: "Si",
+            confirmButtonColor: "#000000"
+
+          }).then(response=>{
+            if(response.isConfirmed){
+              Swal.fire('¡Exito!','se vacio el carrito de compras','success')
+              setProductCartList([])
+            }else if(response.isDenied){
+              Swal.fire('Informacion', 'No paso nada')
+            }else{
+
+            }
+          })
+     }
+
+     const clearCartAfterBuy = ()=>{
+      setProductCartList([])
      }
 
 
@@ -56,40 +78,8 @@ export const CartProvider = ({children}) =>{
       return totalPriceProducts;
     }
 
-
-    // const addProduct = (product) => {
-    //   if (productCartList.some((el) => el.id === product.id)) {
-    //     let index = productCartList.findIndex((el) => el.id === product.id);
-    //     let newProduct = productCartList[index];
-    //     newProduct.quantity = newProduct.quantity + product.quantity;
-
-    //     const newCartList = [...productCartList];
-    //     newCartList.splice(index, 1, newProduct);
-
-    //     setProductCartList([...newCartList]);
-    //     console.log(productCartList);
-    //   } else {
-    //     const newList = [...productCartList, product];
-    //     setProductCartList(newList);
-      
-    //   }
-    // };
-
-    // const deleteProduct = (idProduct)=>{
-    //     const copyArray = [...productCartList];
-    //     const newArray = copyArray.filter(el=>el.id !== idProduct )
-    //     setProductCartList(newArray)
-    // }
-    
-    // const clearCart = () =>{
-    //     setProductCartList([])
-    // }
-    
-
-
-
     return(                                 
-        <CartContext.Provider value={{productCartList, addProduct,deleteProduct,clearCart,getTotalProducts,getTotalPrice}}>
+        <CartContext.Provider value={{productCartList, addProduct,deleteProduct,clearCart,getTotalProducts,getTotalPrice,clearCartAfterBuy}}>
             {/* ..Components */}
             {children}
         </CartContext.Provider>
